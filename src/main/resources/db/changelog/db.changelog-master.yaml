@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/db.changelog-fooditem.xml
+  - include:
+      file: db/changelog/db.changelog-foodorder.xml
+  - include:
+      file: db/changelog/db.changelog-foodorder-fooditem.xml
+  - include:
+      file: db/changelog/db.changelog-foodmenu.xml
+  - include:
+      file: db/changelog/db.changelog-foodmenu-fooditem.xml

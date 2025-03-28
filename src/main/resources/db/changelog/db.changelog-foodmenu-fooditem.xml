@@ -1,0 +1,22 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-foodmenu-fooditem-table" author="m.jurevicius">
+        <createTable tableName="FOODMENU_FOODITEM">
+            <column name="foodmenu_id" type="bigint">
+                <constraints referencedTableName="FOODMENU" referencedColumnNames="id" nullable="false"
+                             foreignKeyName="FoodmenuFooditemFoodmenuFk" />
+            </column>
+            <column name="fooditem_id" type="bigint">
+                <constraints referencedTableName="FOODITEM" referencedColumnNames="id" nullable="false"
+                             foreignKeyName="FoodmenuFooditemFooditemFk" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="load-Foodmenu-fooditem-data" author="m.jurevicius">
+        <loadData tableName="FOODMENU_FOODITEM" separator=";" file="foodmenu-fooditem.csv"
+                  relativeToChangelogFile="true" />
+    </changeSet>
+</databaseChangeLog>
